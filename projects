@@ -11,15 +11,22 @@ def get_level_range(level):
     elif level == 2:
         max_num = 10
     elif level == 3:
-        max_num = 25
+        max_num = 20
     elif level == 4:
-        max_num = 35
+        max_num = 25
     elif level == 5:
-        max_num = 50
+        max_num = 35
     elif level == 6:
+        max_num = 50
+    elif level == 7:
+        max_num = 65
+    elif level == 8:
         max_num = 75
-   
-   
+    elif level == 9:
+        max_num = 90
+    elif level == 10:
+        max_num = 100
+ 
    
    
    
