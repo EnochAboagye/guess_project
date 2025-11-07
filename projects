@@ -17,17 +17,17 @@ def get_level_range(level):
     elif level == 6:
         max_num = 75
     elif level >= 7:
-        if level % 6 == 1: # L7, L13, ...
+        if level % 6 == 1:
             max_num = 5
-        elif level % 6 == 2: # L8, L14, ...
+        elif level % 6 == 2:
             max_num = 10
-        elif level % 6 == 3: # L9, L15, ...
+        elif level % 6 == 3:
             max_num = 25
-        elif level % 6 == 4: # L10, L16, ...
+        elif level % 6 == 4:
             max_num = 35
-        elif level % 6 == 5: # L11, L17, ...
+        elif level % 6 == 5:
             max_num = 50
-        elif level % 6 == 0: # L6, L12, L18, ...
+        elif level % 6 == 0:
             max_num = 75
         else: # Should not happen with the logic above
             max_num = 10 # Default fallback
@@ -52,25 +52,25 @@ def play_game():
         # Generate the secret number for the current level
         secret_number = random.randint(min_num, max_num)
         
-        print(f"\n **Current Level: {current_level}**")
-        print(f"I'm thinking of a number between **{min_num} and {max_num}** (inclusive).")
+        print(f"\n Current Level: {current_level}")
+        print(f"I'm thinking of a number between {min_num} and {max_num} (inclusive).")
         
         try:
             # Get the player's guess
             guess = int(input("Enter your guess: "))
         except ValueError:
-            # Handle non-integer input
+            
             print(" Invalid input. Please enter a whole number.")
-            continue # Skip to the next iteration (try guessing again)
+            continue # Try Guessing Again
 
         # Check the guess
         if guess == secret_number:
-            print(f" **Correct!** The number was {secret_number}.")
+            print(f" Correct! The number was {secret_number}.")
             # Advance to the next level
             current_level += 1
             print("⬆ Moving up to the next level!")
         else:
-            print(f" **Wrong!** The number was {secret_number}.")
+            print(f" Wrong! The number was {secret_number}.")
             
             # Move back one level, but stop at Level 1
             if current_level > 1:
@@ -81,10 +81,10 @@ def play_game():
 
         print("-" * 40)
         
-        # Optional: Add a way to quit the game
+        #A way to quit the game
         play_again = input("Press 'Enter' to continue to the next round, or type 'quit' to exit: ").lower()
         if play_again == 'quit':
-            print(f"\n Game Over! You finished the game on **Level {current_level}**.")
+            print(f"\n Game Over! You finished the game on Level {current_level}.")
             break
 
 # Start the game
