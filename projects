@@ -29,7 +29,7 @@ def get_level_range(level):
             max_num = 50
         elif level % 6 == 0:
             max_num = 75
-        else: # Should not happen with the logic above
+        else: 
             max_num = 10 # Default fallback
 
     else:
@@ -45,7 +45,7 @@ def play_game():
     print("Guess the number to advance a level. Get it wrong and you go back one level.")
     print("-" * 40)
 
-    # Main game loop
+  
     while True:
         min_num, max_num = get_level_range(current_level)
         
@@ -81,7 +81,7 @@ def play_game():
 
         print("-" * 40)
         
-        #A way to quit the game
+        # A way to quit the game
         play_again = input("Press 'Enter' to continue to the next round, or type 'quit' to exit: ").lower()
         if play_again == 'quit':
             print(f"\n Game Over! You finished the game on Level {current_level}.")
